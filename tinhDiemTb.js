@@ -1,16 +1,15 @@
-
 document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("ok").addEventListener("click", tinhTb);
     document.getElementById("cancel").addEventListener("click", myFunction2);
 });
 
 function tinhTb() {
-    var a = parseInt(document.getElementById("diem1").value);
-    var b = parseInt(document.getElementById("diem2").value);
+    var a = parseInt(document.getElementById("inputDiem1").value);
+    var b = parseInt(document.getElementById("inputDiem2").value);
     var c = document.getElementById("year");
     var value = parseInt(c.options[c.selectedIndex].value);
     var k;
-
+    // Tính toán dựa trên giá trị của year
     switch (value) {
         case 1:
             k = (a + (b * 2)) / 3;
@@ -26,8 +25,9 @@ function tinhTb() {
     }
 
     // Hiển thị điểm trung bình
-    document.getElementById("diemTbInput").value = k; // hiển thị số thập phân với 2 chữ số
+    document.getElementById("diemTbInput").value = k.toFixed(2); // Hiển thị số thập phân với 2 chữ số
 
+    // Xác định kết quả học lực
     var resultElement = document.getElementById("kq");
     if (k >= 9) {
         resultElement.innerHTML = "Xuất sắc";
@@ -45,8 +45,9 @@ function tinhTb() {
 }
 
 function myFunction2() {
-    document.getElementById("diem1").value = "";
-    document.getElementById("diem2").value = "";
+    // Xóa giá trị đã nhập và kết quả
+    document.getElementById("inputDiem1").value = "";
+    document.getElementById("inputDiem2").value = "";
     document.getElementById("diemTbInput").value = "";
     document.getElementById("kq").innerHTML = "";
 }
