@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .body{
+            position: relative;
+            background-color: antiquewhite;
+            width: 300px;
+            height: 400px;
+        }
+        .head{
+            position: absolute;
+            color: blue;
+        }
+        .in{
+            top: 100px;
+            position: absolute;
+            left: 30px;
+        }
+        input{
+            position: absolute;
+            left: 90px;
+        }
+        .button{
+            position: absolute;
+            top: 190px;
+            left: 160px;
+            display: flex;
+        }
+        #diem1, #diem2, .year{
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <script src="tinhDiemTb.js"></script>
+    <div class="body">
+        <h2 class="head">BẢNG ĐIỂM CỦA EM</h2>
+        <div class="in">
+            <div id="diem1">Semester 1<input type="number" id="diem1"></div>
+            <div id="diem2">Semester 2<input type="number" id="diem2"></div>
+            <div class="year">
+                Year: 
+                <select name="year" id="year">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+            </div>
+            <div id="diemTb">Summarise: <input type="text" id="diemTbInput" readonly></div>
+            <h2 id="kq"></h2>
+            <div class="button">
+                <button type="button" id="ok">OK</button>
+                <button type="button" id="cancel">Cancel</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
